@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&family=Mulish:wght@300&family=Open+Sans&display=swap");
 
 :root {
   --primary-color: #4caf50;
@@ -10,8 +10,27 @@
 
 body {
   margin: 0;
+  font-family: "Mulish", sans-serif;
+}
+
+p {
+  font-family: "Mulish", sans-serif;
+  font-size: 17px !important;
+}
+
+h1,h2,h3{
   font-family: "Open Sans", sans-serif;
 }
+
+h2{
+  font-size: 48px;
+}
+
+h3{
+  font-size: 24px;
+  font-weight: 400;
+}
+
 
 nav {
   background-color: transparent; /* Set the initial background color */
@@ -188,13 +207,13 @@ main {
   flex-direction: column;
 }
 
-.welcome-page h1 {
+.welcome-page h2 {
   font-size: 42px;
   margin: 0;
   color: var(--neutral-color_1);
 }
 
-.welcome-page h1 span {
+.welcome-page h2 span {
   color: var(--secondary-color);
 }
 
@@ -212,7 +231,7 @@ main {
   flex-wrap: wrap;
 }
 
-.welcome-page-circle h2 {
+.welcome-page-circle h3{
   text-align: center;
   color: var(--neutral-color_1);
 }
@@ -252,19 +271,14 @@ main {
   flex-direction: column;
 }
 
-.choose-us-page h1 {
-  font-size: 42px;
-  margin: 0;
-  color: var(--neutral-color_1);
-}
 
-.choose-us-page h1 span {
+
+.choose-us-page h2 span {
   color: var(--primary-color);
 }
 
 .choose-us-page p {
   line-height: 2;
-  font-size: 14px;
   color: gray;
 }
 
@@ -281,8 +295,8 @@ main {
 .choose-us-page-card-items {
   gap: 20px;
   display: flex;
-  max-width: 400px;
-  height: 150px;
+  width: 400px;
+  height: 200px;
   background-color: var(--neutral-color_2);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -297,8 +311,8 @@ main {
 }
 
 .choose-us-page-card-items img {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
 }
 
 .choose-us-page-card-items p {
@@ -306,7 +320,7 @@ main {
 }
 
 .service {
-  margin: 5rem 0px;
+  margin: 7rem 0px;
   height: auto;
   display: flex;
   padding-left: 8rem;
@@ -315,13 +329,12 @@ main {
   flex-direction: column;
 }
 
-.service h1 {
-  font-size: 42px;
-  margin: 0;
+.service h2 {
+  margin-bottom: 40px;
   color: var(--neutral-color_1);
 }
 
-.service h1 span {
+.service h2 span {
   color: var(--primary-color);
 }
 
@@ -366,17 +379,15 @@ main {
 }
 
 .service-card-items p {
-  line-height: 2;
-  font-size: 14px;
+  line-height: 1.5;
   color: gray;
 }
 
 .image-contact-us {
+  margin: 7rem 0px;
   height: 350px;
-  margin-top: 5rem;
   padding-left: 8rem;
   padding-right: 5rem;
-  margin-bottom: 5rem;
 }
 
 .image-contact-us-img {
@@ -397,16 +408,109 @@ main {
 
 .image-contact-us-img-text h2 {
   color: var(--primary-color);
+  font-size: 30px !important;
 }
 
 .image-contact-us-img-text p {
   color: var(--neutral-color_2);
-  font-size: 14px;
 }
 
 .image-contact-us-img-button p {
   color: var(--neutral-color_2);
-  font-size: 14px;
+}
+
+.vetenary-doctors {
+  margin: 20px 0px;
+  padding-left: 8rem;
+  padding-right: 5rem;
+  margin-bottom: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.vetenary-doctors-text h2 {
+  margin: 0;
+  color: var(--neutral-color_1);
+}
+
+.vetenary-doctors-text h2 span {
+  color: var(--primary-color);
+}
+
+.vetenary-doctors-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.vetenary-doctors-card-items {
+  width: 250px;
+  height: auto;
+}
+
+.vetenary-doctors-card-items-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.vetenary-doctors-card-items-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.vetenary-doctors-card-items-name {
+  max-height: 200px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.vetenary-doctors-card-items-name h3 {
+  font-size: 18px !important;
+  margin: 0;
+  color: var(--neutral-color_1);
+}
+
+.vetenary-doctors-card-items-name h3 span {
+  color: gray !important;
+  font-size: 15px;
+}
+
+.vetenary-doctors-card-items-name p {
+  color: gray !important;
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: justify;
+  transition: max-height 0.5s ease;
+}
+
+.show-more {
+  max-height: none;
+}
+
+.read-more {
+  font-size: 15px;
+  display: none;
+  background: none;
+  border: none;
+  color: var(--primary-color); /* Change the text color to your preference */
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* Optional: Add underline on hover */
+.read-more:hover {
+  text-decoration: underline;
 }
 
 aside {
@@ -647,9 +751,8 @@ aside {
     background-position: center;
   }
 
-  .image-contact-us-img-text{
+  .image-contact-us-img-text {
     text-align: center;
-
   }
 
   .image-contact-us-img {

@@ -111,3 +111,23 @@ function updateSlide() {
 
 // Initialize with the first content and slide number
 updateSlide();
+
+
+const contentList = document.querySelectorAll('.vetenary-doctors-card-items-name');
+const readMoreBtnList = document.querySelectorAll('.read-more');
+
+readMoreBtnList.forEach((readMoreBtn, index) => {
+
+  if (contentList[index].scrollHeight > contentList[index].clientHeight) {
+    readMoreBtn.style.display = 'inline-block'; // Show the button
+  }
+  readMoreBtn.addEventListener('click', () => {
+    if (contentList[index].classList.contains('show-more')) {
+      contentList[index].classList.remove('show-more');
+      readMoreBtn.textContent = 'Read More';
+    } else {
+      contentList[index].classList.add('show-more');
+      readMoreBtn.textContent = 'Read Less';
+    }
+  });
+});
