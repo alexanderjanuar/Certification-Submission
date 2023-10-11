@@ -18,19 +18,20 @@ p {
   font-size: 17px !important;
 }
 
-h1,h2,h3{
+h1,
+h2,
+h3 {
   font-family: "Open Sans", sans-serif;
 }
 
-h2{
-  font-size: 48px;
+h2 {
+  font-size: 40px;
 }
 
-h3{
+h3 {
   font-size: 24px;
   font-weight: 400;
 }
-
 
 nav {
   background-color: transparent; /* Set the initial background color */
@@ -208,18 +209,34 @@ main {
 }
 
 .welcome-page h2 {
-  font-size: 42px;
   margin: 0;
-  color: var(--neutral-color_1);
+  position: relative;
+  margin-bottom: 10px;
 }
-
 .welcome-page h2 span {
   color: var(--secondary-color);
 }
 
+.welcome-page h2::after {
+  content: "";
+  position: absolute;
+  width: 20%; /* Set the width to 30% */
+  height: 1.5px;
+  background-color: var(--secondary-color);
+  bottom: -10px;
+  left: 0;
+  transition: width 0.25s ease-out;
+}
+
+.welcome-page h2:hover::after {
+  width: 100%;
+}
+
 .welcome-page p {
+  margin-top: 40px;
   line-height: 2;
   font-size: 14px;
+  color: gray;
 }
 
 .welcome-page-image {
@@ -231,7 +248,7 @@ main {
   flex-wrap: wrap;
 }
 
-.welcome-page-circle h3{
+.welcome-page-circle h3 {
   text-align: center;
   color: var(--neutral-color_1);
 }
@@ -271,10 +288,27 @@ main {
   flex-direction: column;
 }
 
-
+.choose-us-page h2 {
+  position: relative;
+}
 
 .choose-us-page h2 span {
   color: var(--primary-color);
+}
+
+.choose-us-page h2::after {
+  content: "";
+  position: absolute;
+  width: 20%; /* Set the width to 30% */
+  height: 1.5px;
+  background-color: var(--primary-color);
+  bottom: -10px;
+  left: 0;
+  transition: width 0.25s ease-out;
+}
+
+.choose-us-page h2:hover::after {
+  width: 100%;
 }
 
 .choose-us-page p {
@@ -296,7 +330,7 @@ main {
   gap: 20px;
   display: flex;
   width: 400px;
-  height: 200px;
+  height: 180px;
   background-color: var(--neutral-color_2);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -335,7 +369,22 @@ main {
 }
 
 .service h2 span {
-  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.service  h2::after {
+  content: "";
+  position: absolute;
+  width: 20%; 
+  height: 1.5px;
+  background-color: var(--secondary-color);
+  bottom: -10px;
+  left: 0;
+  transition: width 0.25s ease-out;
+}
+
+.service  h2:hover::after {
+  width: 100%;
 }
 
 .service-card {
@@ -384,8 +433,8 @@ main {
 }
 
 .image-contact-us {
-  margin: 7rem 0px;
-  height: 350px;
+  margin: 9rem 0px;
+  height: 420px;
   padding-left: 8rem;
   padding-right: 5rem;
 }
@@ -434,6 +483,7 @@ main {
 .vetenary-doctors-text h2 {
   margin: 0;
   color: var(--neutral-color_1);
+  margin-bottom: 40px;
 }
 
 .vetenary-doctors-text h2 span {
@@ -451,6 +501,14 @@ main {
 .vetenary-doctors-card-items {
   width: 250px;
   height: auto;
+  cursor: pointer;
+  transition: color 0.5s ease;
+}
+
+.vetenary-doctors-card-items:hover h3,
+.vetenary-doctors-card-items:hover span,
+.vetenary-doctors-card-items:hover p {
+  color: var(--primary-color);
 }
 
 .vetenary-doctors-card-items-image {
@@ -481,12 +539,12 @@ main {
 }
 
 .vetenary-doctors-card-items-name h3 span {
-  color: gray !important;
+  color: gray;
   font-size: 15px;
 }
 
 .vetenary-doctors-card-items-name p {
-  color: gray !important;
+  color: gray;
   font-size: 15px;
   line-height: 1.5;
   text-align: justify;
@@ -595,23 +653,33 @@ aside {
     align-items: center;
   }
 
-  .welcome-page h1 {
+  .welcome-page h2 {
     text-align: center;
     font-size: 32px;
     margin: 0;
     color: var(--neutral-color_1);
   }
 
+  .welcome-page h2::after {
+    width: 30%;
+    left: 35%;
+    transition: width 0.25s ease-out, left 0.25s ease-out;
+  }
+
+  .welcome-page h2:hover::after {
+    width: 100%;
+    left: 0;
+  }
+
   .welcome-page p {
     text-align: center;
     font-size: 14px;
-    color: var(--neutral-color_1);
   }
 
   .welcome-page-image {
     margin-top: 2rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   }
 
@@ -633,13 +701,25 @@ aside {
     align-items: center;
   }
 
-  .choose-us-page h1 {
+  .choose-us-page h2 {
     text-align: center;
     font-size: 32px;
     margin: 0;
   }
 
+  .choose-us-page h2::after {
+    width: 30%;
+    left: 35%;
+    transition: width 0.25s ease-out, left 0.25s ease-out;
+  }
+
+  .choose-us-page h2:hover::after {
+    width: 100%;
+    left: 0;
+  }
+
   .choose-us-page p {
+    margin: 40px 0px;
     text-align: center;
     font-size: 14px;
   }
@@ -651,6 +731,7 @@ aside {
 
   .choose-us-page-card-items-text p {
     text-align: start;
+    margin: 0;
   }
 
   .service {
@@ -664,7 +745,7 @@ aside {
     justify-content: space-between;
   }
 
-  .service h1 {
+  .service h2 {
     font-size: 32px;
   }
 
@@ -693,6 +774,13 @@ aside {
 
   .image-contact-us-img-button button {
     width: 11rem;
+  }
+
+  .vetenary-doctors {
+    margin: 5rem 0px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    align-items: center;
   }
 }
 
@@ -840,11 +928,11 @@ aside {
   }
 
   .image-contact-us-img-text h2 {
-    font-size: 20px;
+    font-size: 24px !important;
   }
 
   .image-contact-us-img-text p {
-    font-size: 12px;
+    font-size: 14px !important;
   }
 }
 
