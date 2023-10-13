@@ -11,6 +11,7 @@
 body {
   margin: 0;
   font-family: "Mulish", sans-serif;
+  scroll-behavior: smooth;
 }
 
 p {
@@ -87,6 +88,38 @@ nav .container a {
 
 nav .container a:hover {
   border-bottom: 2px solid var(--primary-color);
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  backdrop-filter: blur(10px);
+  min-width: 120px;
+  background-color: white;
+  z-index: 1;
+  border: 1px solid var(--neutral-color_1);
+}
+
+.dropdown-content a {
+  color: var(--neutral-color_1) !important;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 16px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: var(--primary-color) !important;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .header-img {
@@ -365,26 +398,28 @@ main {
 
 .service h2 {
   margin-bottom: 40px;
-  color: var(--neutral-color_1);
+  position: relative;
 }
 
 .service h2 span {
-  text-decoration: underline;
+  color: var(--primary-color);
 }
 
-.service  h2::after {
+.service h2::after {
   content: "";
   position: absolute;
-  width: 20%; 
   height: 1.5px;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   bottom: -10px;
-  left: 0;
   transition: width 0.25s ease-out;
+  width: 20%;
+  left: 40%;
+  transition: width 0.25s ease-out, left 0.25s ease-out;
 }
 
-.service  h2:hover::after {
+.service h2:hover::after {
   width: 100%;
+  left: 0;
 }
 
 .service-card {
@@ -483,11 +518,29 @@ main {
 .vetenary-doctors-text h2 {
   margin: 0;
   color: var(--neutral-color_1);
-  margin-bottom: 40px;
+  margin-bottom: 60px;
+  position: relative;
 }
 
 .vetenary-doctors-text h2 span {
   color: var(--primary-color);
+}
+
+.vetenary-doctors-text h2::after {
+  content: "";
+  position: absolute;
+  height: 1.5px;
+  background-color: var(--primary-color);
+  bottom: -10px;
+  transition: width 0.25s ease-out;
+  width: 20%;
+  left: 40%;
+  transition: width 0.25s ease-out, left 0.25s ease-out;
+}
+
+.vetenary-doctors-text h2:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 .vetenary-doctors-card {
@@ -569,6 +622,114 @@ main {
 /* Optional: Add underline on hover */
 .read-more:hover {
   text-decoration: underline;
+}
+
+.product-page {
+  margin: 7rem 0px;
+  height: auto;
+  padding-left: 8rem;
+  padding-right: 5rem;
+}
+
+.product-page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.product-page-container-title {
+  margin-bottom: 40px;
+}
+
+.product-page-container-title h2 {
+  color: var(--neutral-color_1);
+  position: relative;
+}
+
+.product-page-container-title h2 span {
+  color: var(--primary-color);
+}
+
+.product-page-container-title h2::after {
+  content: "";
+  position: absolute;
+  height: 1.5px;
+  background-color: var(--primary-color);
+  bottom: -10px;
+  transition: width 0.25s ease-out;
+  width: 20%;
+  left: 40%;
+  transition: width 0.25s ease-out, left 0.25s ease-out;
+}
+
+.product-page-container-title h2:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.product-page-container-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.product-page-container-card-items {
+  width: 300px;
+  height: auto;
+  cursor: pointer;
+  transition: color 0.5s ease;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.product-page-container-card-items-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.product-page-container-card-items-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.product-page-container-card-items-image-text {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  padding: 5px 25px;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.product-page-container-card-items-text {
+  text-align: center;
+}
+
+.product-page-container-card-items-text h3 {
+  color: var(--primary-color);
+  margin: 0;
+}
+.star-rating {
+  margin-top: 5px;
+}
+
+.star-rating .checked {
+  color: var(--primary-color);
+}
+
+.product-page-container-card-items-text .price {
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 5px;
 }
 
 aside {
@@ -782,6 +943,14 @@ aside {
     padding-right: 2rem;
     align-items: center;
   }
+
+  .vetenary-doctors-text h2 {
+    font-size: 32px;
+  }
+
+  .vetenary-doctors-text h2 span {
+    color: var(--primary-color);
+  }
 }
 
 @media (max-width: 768px) {
@@ -933,6 +1102,10 @@ aside {
 
   .image-contact-us-img-text p {
     font-size: 14px !important;
+  }
+
+  .vetenary-doctors-text h2 {
+    text-align: center;
   }
 }
 

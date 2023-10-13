@@ -69,7 +69,7 @@ const aside_image = [
 const funFacts = [
   "A third of ALL households around the world have a dog.",
   "Cats sleep for around 13 to 16 hours a day 70% of their life",
-  "Baby rabbits are called 'kittens'.Female rabbits are called 'does' and male rabbits are called 'bucks'"
+  "Baby rabbits are called 'kittens'"
 ];
 
 
