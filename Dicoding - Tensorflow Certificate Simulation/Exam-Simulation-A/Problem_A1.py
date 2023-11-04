@@ -30,9 +30,6 @@ def solution_A1():
                  12.0, 13.0, 14.0, ], dtype=float)
 
     # YOUR CODE HERE
-
-
-
     model = tf.keras.models.Sequential([
         tf.keras.layers.Dense(units=1, input_shape=[1]),
     ])

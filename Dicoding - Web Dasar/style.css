@@ -8,10 +8,13 @@
   --support-color: #ff5722;
 }
 
+* {
+  scroll-behavior: smooth !important;
+}
+
 body {
   margin: 0;
   font-family: "Mulish", sans-serif;
-  scroll-behavior: smooth;
 }
 
 p {
@@ -38,7 +41,7 @@ nav {
   background-color: transparent; /* Set the initial background color */
   transition: background-color 0.3s; /* Add a smooth transition effect */
   font-size: 18px;
-  padding: 15px 0;
+  padding: 10px 0;
   position: fixed;
   top: 0;
   width: 100%;
@@ -52,6 +55,7 @@ nav .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 nav .container h1 {
@@ -88,6 +92,7 @@ nav .container a {
 
 nav .container a:hover {
   border-bottom: 2px solid var(--primary-color);
+  color: var(--primary-color);
 }
 
 li.dropdown {
@@ -98,10 +103,10 @@ li.dropdown {
   display: none;
   position: absolute;
   backdrop-filter: blur(10px);
-  min-width: 120px;
+  width: 120px;
   background-color: white;
   z-index: 1;
-  border: 1px solid var(--neutral-color_1);
+  border: 1px solid gray;
 }
 
 .dropdown-content a {
@@ -110,17 +115,18 @@ li.dropdown {
   text-decoration: none;
   display: block;
   text-align: left;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .dropdown-content a:hover {
   background-color: #f1f1f1;
   color: var(--primary-color) !important;
+  border-bottom: 0px solid var(--primary-color) !important;
 }
 
-.dropdown:hover .dropdown-content {
+/* .dropdown:hover .dropdown-content {
   display: block;
-}
+} */
 
 .header-img {
   height: 100vh;
@@ -247,7 +253,7 @@ main {
   margin-bottom: 10px;
 }
 .welcome-page h2 span {
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .welcome-page h2::after {
@@ -255,7 +261,7 @@ main {
   position: absolute;
   width: 20%; /* Set the width to 30% */
   height: 1.5px;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   bottom: -10px;
   left: 0;
   transition: width 0.25s ease-out;
@@ -287,7 +293,7 @@ main {
 }
 
 .welcome-page-circle span {
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .welcome-page-circle-image {
@@ -295,19 +301,19 @@ main {
   height: 200px;
   border-radius: 50%;
   overflow: hidden;
-  border: var(--secondary-color) 5px solid;
+  border: var(--primary-color) 5px solid;
 }
 
 .welcome-page-circle-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* This ensures the image fits within the circle */
+  object-fit: cover;
   transition: opacity 0.3s ease-in-out;
   cursor: pointer;
 }
 
 .welcome-page-circle-image:hover {
-  opacity: 0.8; /* Adjust the opacity level as needed */
+  opacity: 0.8;
 }
 
 .choose-us-page {
@@ -718,6 +724,7 @@ main {
   color: var(--primary-color);
   margin: 0;
 }
+
 .star-rating {
   margin-top: 5px;
 }
@@ -768,7 +775,7 @@ aside {
 .card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* This ensures the image fits within the circle */
+  object-fit: cover;
   cursor: pointer;
 }
 
@@ -804,7 +811,71 @@ aside {
   margin: 0 10px;
 }
 
+.footer {
+  background-color: #333; 
+  color: #fff; 
+  padding: 2px 0;
+  
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-left: 8rem;
+  padding-right: 5rem;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 0 20px;
+}
+
+.footer-section h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.footer-section p{
+  font-size: 14px !important;
+  line-height: 1.5;
+}
+
+.links ul {
+  list-style: none;
+}
+
+.links li {
+  margin-bottom: 10px;
+}
+
+.links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.links a:hover {
+  color: #ff9900;
+}
+
+.footer-bottom {
+  text-align: center;
+  background-color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+}
+
 @media (max-width: 1024px) {
+  nav .container {
+    margin: 0 100px;
+  }
+
   .welcome-page {
     padding-top: 10px;
     height: auto;
@@ -951,16 +1022,36 @@ aside {
   .vetenary-doctors-text h2 span {
     color: var(--primary-color);
   }
+
+  .product-page {
+    margin: 5rem 0px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    align-items: center;
+  }
+
+  .product-page h2 {
+    font-size: 32px;
+  }
+
+  .product-page h3 {
+    font-size: 20px;
+  }
+
+  .footer-content{
+    padding: 0;
+  }
 }
 
 @media (max-width: 768px) {
   nav .container {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    margin: 0 auto;
   }
 
   nav .container ul {
-    margin-top: 20px;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -1017,6 +1108,17 @@ aside {
     align-items: center;
     justify-content: center;
     gap: 30px;
+  }
+
+  .product-page-container-card-items {
+    width: 250px;
+    overflow: hidden;
+  }
+
+  .product-page-container-card-items img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
   }
 }
 
@@ -1110,6 +1212,13 @@ aside {
 }
 
 @media (max-width: 376px) {
+  .dropdown-content {
+    max-width: 90px;
+  }
+  .dropdown-content a {
+    font-size: 12px;
+  }
+
   .choose-us-page-card-items {
     flex-direction: column;
   }

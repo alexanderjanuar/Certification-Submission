@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bookshelf App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-primary">
+      <div class="container-md d-flex justify-content-center">
+        <a class="navbar-brand h1 mt-1 text-white" href="#">Bookshelf App</a>
+      </div>
+    </nav>
+    
+    <div class="container my-4">
+      <div
+        class="row justify-content-center align-items-center"
+        style="height: 85vh"
+      >
+        <div class="col-md-5">
+          <div class="card">
+            <div class="card-header bg-primary text-white">
+              Masukkan Buku Baru
+            </div>
+            <div class="card-body">
+              <label for="title" class="form-label">Judul</label>
+              <input type="text" id="title" class="form-control" />
+
+              <label for="author" class="form-label my-2">Author</label>
+              <input type="text" id="author" class="form-control" />
+
+              <label for="date" class="form-label my-2">Tahun</label>
+              <input type="number" id="date" class="form-control" />
+
+              <div class="d-grid gap-2 mt-4">
+                <button
+                  class="btn btn-primary"
+                  type="submit"
+                  value="Submit"
+                  name="Submit"
+                  id="add-book-button"
+                >
+                  Tambah
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-7">
+          <div class="card">
+            <div class="card-header bg-primary text-white">Cari Judul Buku</div>
+            <div class="card-body d-flex align-items-center g-4">
+              <input type="text" class="form-control" id="find-book" />
+              <button
+                class="btn btn-primary my-2"
+                type="submit"
+                id="find-book-button"
+                value="Submit"
+              >
+                Cari
+              </button>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table
+              class="table caption-top table-bordered table-primary"
+              id="unread-book"
+            >
+              <caption>
+                Daftar Buku belum dibaca
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">No</th>
+                  <th scope="col">Nama Buku</th>
+                  <th scope="col">Author</th>
+                  <th scope="col">Tahun</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
+          <div class="table-responsive">
+            <table
+              class="table caption-top table-bordered table-success"
+              id="readed-book"
+            >
+              <caption>
+                Daftar Buku Telah Dibaca
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">No</th>
+                  <th scope="col">Nama Buku</th>
+                  <th scope="col">Author</th>
+                  <th scope="col">Tahun</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalEdit"  data-bs-toggle= "modal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editModalLabel">Edit Detail Buku</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="edit-title" class="form-label">Judul</label>
+                <input type="text" class="form-control" id="edit-title">
+              </div>
+              <div class="mb-3">
+                <label for="edit-author" class="form-label">Author</label>
+                <input type="text" class="form-control" id="edit-author">
+              </div>
+              <div class="mb-3">
+                <label for="edit-date" class="form-label">Tahun</label>
+                <input type="number" class="form-control" id="edit-date">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="save-edit-button">Simpan Perubahan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteConfirmationModalLabel">Konfirmasi Penghapusan</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Apakah Anda yakin ingin menghapus buku ini?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+            <button type="button" class="btn btn-danger" id="confirmDeleteButton">Hapus</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -38,11 +38,10 @@ const updateDots = () => {
   });
 };
 
-setInterval(goNext, 3000); // Automatic slideshow
+setInterval(goNext, 7000); // Automatic slideshow
 
 // Initial update of dots
 updateDots();
-
 
 // JavaScript to change navbar background color on scroll
 const navbar = document.getElementById("navbar");
@@ -51,27 +50,24 @@ window.addEventListener("scroll", () => {
   if (window.scrollY > 50) {
     // Change the value to control when the color change occurs
     navbar.style.backgroundColor = "#333333";
-    navbar.style.borderBottom = "#fff solid 1px"; 
+    navbar.style.borderBottom = "#fff solid 1px";
   } else {
     navbar.style.backgroundColor = "transparent"; // Reset to the initial background color
-    navbar.style.border = "none"; 
-    
-}
+    navbar.style.border = "none";
+  }
 });
 
-
 const aside_image = [
-  "resource/\image/\aside-facts/\image1.jpg",
-  "resource/\image/\aside-facts/\image2.jpg",
-  "resource/\image/\aside-facts/\image3.jpg",
+  "resource/image/aside-facts/image1.jpg",
+  "resource/image/aside-facts/image2.jpg",
+  "resource/image/aside-facts/image3.jpg",
 ];
 
 const funFacts = [
   "A third of ALL households around the world have a dog.",
   "Cats sleep for around 13 to 16 hours a day 70% of their life",
-  "Baby rabbits are called 'kittens'"
+  "Baby rabbits are called 'kittens'",
 ];
-
 
 //Aside Slide
 let currentIndex = 0; // Index of the currently displayed content
@@ -103,31 +99,41 @@ function updateSlide() {
 
   // After a brief delay, update the content and fade in
   setTimeout(() => {
-      slideshowImage.src = aside_image[currentIndex];
-      slideshowContent.textContent = funFacts[currentIndex];
-      slideshowContent.style.opacity = 1; // Fade in
+    slideshowImage.src = aside_image[currentIndex];
+    slideshowContent.textContent = funFacts[currentIndex];
+    slideshowContent.style.opacity = 1; // Fade in
   }, 500); // Wait for the fade-out effect to complete (0.5 seconds)
 }
 
 // Initialize with the first content and slide number
 updateSlide();
 
-
-const contentList = document.querySelectorAll('.vetenary-doctors-card-items-name');
-const readMoreBtnList = document.querySelectorAll('.read-more');
+const contentList = document.querySelectorAll(
+  ".vetenary-doctors-card-items-name"
+);
+const readMoreBtnList = document.querySelectorAll(".read-more");
 
 readMoreBtnList.forEach((readMoreBtn, index) => {
-
   if (contentList[index].scrollHeight > contentList[index].clientHeight) {
-    readMoreBtn.style.display = 'inline-block'; // Show the button
+    readMoreBtn.style.display = "inline-block"; // Show the button
   }
-  readMoreBtn.addEventListener('click', () => {
-    if (contentList[index].classList.contains('show-more')) {
-      contentList[index].classList.remove('show-more');
-      readMoreBtn.textContent = 'Read More';
+  readMoreBtn.addEventListener("click", () => {
+    if (contentList[index].classList.contains("show-more")) {
+      contentList[index].classList.remove("show-more");
+      readMoreBtn.textContent = "Read More";
     } else {
-      contentList[index].classList.add('show-more');
-      readMoreBtn.textContent = 'Read Less';
+      contentList[index].classList.add("show-more");
+      readMoreBtn.textContent = "Read Less";
     }
   });
+});
+
+const dropDown = document.querySelector(".dropdown");
+
+dropDown.addEventListener("mouseover", () => {
+  document.querySelector(".dropdown-content").style.display = "block";
+});
+
+dropDown.addEventListener("mouseout", () => {
+  document.querySelector(".dropdown-content").style.display = "none";
 });

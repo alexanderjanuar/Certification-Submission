@@ -16,13 +16,13 @@
           <h1><span>Pet</span> Rescue</h1>
           <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li class="dropdown">
-              <a href="" class="dropbtn">Content</a>
+            <li><a href="#about">About</a></li>
+            <li href="#" class="dropdown">
+              <a class="dropbtn">Content</a>
               <div class="dropdown-content">
-                <a href="#">Services</a>
-                <a href="#">Vetenary Doctor</a>
-                <a href="#">Product</a>
+                <a href="#service">Services</a>
+                <a href="#doctor">Vetenary Doctor</a>
+                <a href="#product">Product</a>
               </div>
             </li>
           </ul>
@@ -52,10 +52,10 @@
 
     <main>
       <div class="content">
-        <div class="welcome-page">
-          <h2>WELCOME TO <span>PET CARE</span></h2>
+        <article class="welcome-page">
+          <h2>WELCOME TO <span>PET RESCUE</span></h2>
           <p>
-            Welcome to our pet care website, where we are dedicated to the
+            Welcome to our pet rescue website, where we are dedicated to the
             well-being and happiness of your furry family members. At our online
             hub, we provide a wealth of resources and expert advice to help you
             nurture, protect, and cherish your pets.
@@ -95,9 +95,9 @@
               <h3>PET <span>FISH</span></h3>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="choose-us-page">
+        <article class="choose-us-page" id="about">
           <h2>Why <span>Choose Us?</span></h2>
           <p>
             At our pet rescue, we are dedicated to making a difference in the
@@ -154,9 +154,9 @@
               </div>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="service">
+        <article class="service" id="service">
           <h2>Our <span>Services</span></h2>
           <div class="service-card">
             <div class="service-card-items">
@@ -224,9 +224,9 @@
               </div>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="image-contact-us">
+        <article class="image-contact-us">
           <div class="image-contact-us-img">
             <div class="image-contact-us-img-text">
               <h2>For Emergency Case, Please Contact Us</h2>
@@ -238,9 +238,9 @@
               <button class="button">Contact With Us</button>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="vetenary-doctors">
+        <article class="vetenary-doctors" id="doctor">
           <div class="vetenary-doctors-text">
             <h2>Meet Our <span>Venetiary Doctor</span></h2>
           </div>
@@ -295,9 +295,9 @@
               <button class="read-more">Read More</button>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="product-page">
+        <article class="product-page" id="product">
           <div class="product-page-container">
             <div class="product-page-container-title">
               <h2>Our <span>Products</span></h2>
@@ -381,7 +381,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </article>
       </div>
 
       <aside>
@@ -406,6 +406,36 @@
         </div>
       </aside>
     </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h2>About Us</h2>
+          <p>
+            We are a dedicated team of animal lovers on a mission to rescue and
+            care for animals in need. Our goal is to provide a safe and loving
+            environment for every animal that comes into our care.
+          </p>
+        </div>
+
+        <div class="footer-section contact">
+          <h2>Contact Us</h2>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> 123 Pet Rescue Lane,
+            Animalville
+          </p>
+          <p>
+            Email: info@petrescuewebsite.com
+          </p>
+          <p>Phone: +1 (123) 456-7890</p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2023 Pet Rescue Website. All rights reserved.</p>
+      </div>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
